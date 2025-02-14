@@ -24,7 +24,7 @@ qt_add_qml_module(MyProject
         URI "Example"
         VERSION 1.0
         NO_PLUGIN
-        QML_FILES UntitledProject2Content/App.qml UntitledProject2/Constants.qml UntitledProject2/EventListModel.qml UntitledProject2/EventListSimulator.qml
+        QML_FILES UntitledProject2Content/App.qml UntitledProject2/Constants.qml UntitledProject2/EventListModel.qml UntitledProject2/EventListSimulator.qml UntitledProject2Content/My_item.qml
 )
 qt_add_resources(MyProject "configuration"
         PREFIX "/"

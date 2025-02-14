@@ -12,12 +12,21 @@ class Controller : public QObject {
     Q_OBJECT
 
 public:
-    explicit Controller(Model *myModel, QObject *parent = nullptr): QObject(parent), model(myModel) {};
-
-    public slots:
-    void incrementCounter(){
-        model->setCounter(model->getCounter() + 1);
+    explicit Controller(Model *myModel, QObject *parent = nullptr): QObject(parent), model(myModel) {
     };
+
+public slots:
+    void buttonAction() {
+        if (model->getDecrementEnabled()) {
+            model->setCounter(model->getCounter() - 1);
+        }
+        else {
+            model->setCounter(model->getCounter() + 1);
+        }
+    }
+    void changeBehavior() {
+        model->setDecrementEnabled(!model->getDecrementEnabled());
+    }
 
 private:
     Model *model;
